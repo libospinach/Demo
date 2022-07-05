@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--让Spring管理Student bean-->
+
+    <bean id="student" class="never.doTest.Student">
+        <property name="name" value="小李"></property>
+        <property name="homework" ref="homework"></property>
+    </bean>
+
+    <bean id="person" class="never.doTest.Person">
+        <constructor-arg name="name" value="小姜"></constructor-arg>
+        <constructor-arg name="age" value="18"></constructor-arg>
+    </bean>
+    <bean id="homework" class="never.doTest.Homework">
+        <property name="content" value="how to do"></property>
+    </bean>
+    <!--让Sproing管理Homework bean-->
+<!--    &lt;!&ndash;切面定义&ndash;&gt;-->
+<!--    <bean id="checktime" class="never.doTest.CheckTime">-->
+<!--    </bean>-->
+<!--    <aop:config>-->
+<!--        <aop:aspect ref="checktime">-->
+<!--            <aop:pointcut id="dohomework" expression="execution(* *.doHomework(..))"/>-->
+<!--            <aop:before method="beforeHomework" pointcut-ref="dohomework"></aop:before>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+</beans>
