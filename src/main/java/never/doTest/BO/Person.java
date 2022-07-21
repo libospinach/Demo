@@ -7,10 +7,15 @@ import java.io.Serializable;
  * @author: Bo Li
  * @date: 2022年07月08日 15:32
  */
-public class Person implements Serializable {
+public class Person implements Serializable,Comparable {
     private static final long serialVersionUID = 1211925009343242199L;
 
 
+    public Person(String name,  int age) {
+        this.name = name;
+
+        this.age = age;
+    }
 
     public Person() {
         this.setIDCard("IDCard");
@@ -73,5 +78,10 @@ public class Person implements Serializable {
 
     public void setIDCard(String IDCard) {
         this.IDCard = IDCard;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return this.name.compareTo(((Person)o).getName());
     }
 }
