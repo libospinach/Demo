@@ -45,6 +45,7 @@ public class ReflactionDemo {
             System.out.println("-------------------");
             System.out.println(doPay.getReturnType());
             System.out.println(doPay.getParameterTypes());
+            System.out.println("-------invoke↓-------");
             doPay.invoke(o,17);
             Method doPay1 = cls.getMethod("doPay", String.class, int.class);
             doPay1.invoke(o,"jhs",18);
