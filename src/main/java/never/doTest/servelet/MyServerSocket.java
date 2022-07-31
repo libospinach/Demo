@@ -13,11 +13,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * @Description: TODO
+ * @Description: 单线程环境版本，多线程高并发不能用
  * @author: Bo Li
  * @date: 2022年07月29日 10:39
  */
-public class MyServerSocket {
+public class MyServerSocket  {
     private static int prot = 8026;
     private static Boolean flag = true;
 

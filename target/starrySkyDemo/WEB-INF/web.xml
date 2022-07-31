@@ -27,6 +27,18 @@
     <url-pattern>/</url-pattern>
 
   </servlet-mapping>
+  <servlet>
+    <servlet-name>testSer</servlet-name>
+    <servlet-class>never.doTest.servelet.Myservelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+    <servlet-name>testSer</servlet-name>
+
+    <url-pattern>/test</url-pattern>
+
+  </servlet-mapping>
+
   <filter>
 
     <filter-name>encodingFilter</filter-name>
