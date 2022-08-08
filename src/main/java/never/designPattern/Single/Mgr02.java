@@ -10,7 +10,7 @@ public class Mgr02 {
         return INSTANCE;
     }
     public void m(){
-        System.out.println("单例模式1");
+        System.out.println("单例模式2");
     }
 
 }
