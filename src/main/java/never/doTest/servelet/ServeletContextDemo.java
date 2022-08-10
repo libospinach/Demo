@@ -30,6 +30,7 @@ public class ServeletContextDemo extends HttpServlet {
         HttpSession session = req.getSession();
         Cookie[] cookies = req.getCookies();
         Cookie cookie = new Cookie("KEY","VALUE");
+        session.setAttribute("name","value");
 
     }
 
