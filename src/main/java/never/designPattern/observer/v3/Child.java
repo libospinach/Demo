@@ -1,5 +1,6 @@
-package never.designPattern.observer.v2;
+package never.designPattern.observer.v3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,28 +10,31 @@ import java.util.List;
  */
 public class Child {
     private Boolean isCry = false;
-    private List<Observer2> list;
-    private ActionClass actionClass;
-
-    public Child(ActionClass actionClass) {
-        this.actionClass = actionClass;
+    private List<Observer3> list = new ArrayList<>();
+    {
+        list.add(new Cat());
+        list.add(new Father());
+        list.add(new Dog());
     }
 
-    public void awake(List<Observer2>  list){
-        for(Observer2 o:list){
-            o.observerAction(this.actionClass);
+
+    public void awake(){
+        ActionClass actionClass = new ActionClass("事件描述", 3,this);
+        for(Observer3 o:list){
+            o.observerAction(actionClass);
         }
     }
 
 
 }
 
-class Dog implements Observer2 {
+class Dog implements Observer3 {
     @Override
     public void observerAction(ActionClass actionClass) {
         method(actionClass);
     }
     public void method(ActionClass actionClass){
+        System.out.println("事件源:"+actionClass.getSource());
         if(actionClass.getLevel()>2&&actionClass.getLevel()<4){
             System.out.println("当前事件等级为:"+actionClass.getLevel()+"，大于2，小于4，描述为："+actionClass.getDes());
             System.out.println("启动dog应急预案");
@@ -39,7 +43,7 @@ class Dog implements Observer2 {
     }
 }
 
-class Father implements Observer2 {
+class Father implements Observer3 {
     public void method(ActionClass actionClass){
         if(actionClass.getLevel()>0&&actionClass.getLevel()<3){
             System.out.println("当前事件等级为:"+actionClass.getLevel()+"，大于0，小于3，描述为："+actionClass.getDes());
@@ -54,7 +58,7 @@ class Father implements Observer2 {
     }
 }
 
-class Cat implements Observer2 {
+class Cat implements Observer3 {
     @Override
     public void observerAction(ActionClass actionClass) {
         method(actionClass);
