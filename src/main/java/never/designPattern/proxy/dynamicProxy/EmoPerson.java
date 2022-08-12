@@ -28,6 +28,10 @@ public class EmoPerson implements Emo {
         new Class[]{Emo.class},new MyInvocationHandler(emoPerson));
         emo.demo();
     }
+
+    public void tell(){
+        System.out.println("tell");
+    }
 }
 
 class MyInvocationHandler implements  InvocationHandler{

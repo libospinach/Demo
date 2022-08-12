@@ -18,6 +18,10 @@ public class EmoPerson implements Emo{
         }
     }
 
+    public void tell(){
+        System.out.println("tell");
+    }
+
     public static void main(String[] args) {
         new TimeProxy(new LogProxy(new EmoPerson())).demo();
     }
