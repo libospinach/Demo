@@ -8,6 +8,7 @@ package never.designPattern.observer.v3;
 public class Observer3Test {
     public static void main(String[] args) {
         Child child = new Child();
+        System.out.println("observe 事件机制");
         child.awake();
     }
 }
