@@ -9,7 +9,7 @@ public class TemplateMethodDemo extends ConfigureClass {
 
     @Override
     void doit1() {
-        System.out.print("方法do it 1");
+        System.out.print("方法do it 1111");
     }
 
     @Override
